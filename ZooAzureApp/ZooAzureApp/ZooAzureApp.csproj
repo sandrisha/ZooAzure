@@ -258,8 +258,10 @@
     <Content Include="assets\js\light-bootstrap-dashboard.js" />
     <Content Include="assets\js\moment.min.js" />
     <Content Include="assets\js\sweetalert2.js" />
+    <Content Include="assets\js\utilidades.js" />
     <Content Include="Global.asax" />
     <Content Include="index.html" />
+    <Content Include="js\tiposAnimal.js" />
     <Content Include="plantilla\calendar.html" />
     <Content Include="plantilla\charts.html" />
     <Content Include="plantilla\components\buttons.html" />
@@ -288,6 +290,7 @@
     <Content Include="plantilla\tables\datatables.net.html" />
     <Content Include="plantilla\tables\extended.html" />
     <Content Include="plantilla\tables\regular.html" />
+    <Content Include="tiposAnimal.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
