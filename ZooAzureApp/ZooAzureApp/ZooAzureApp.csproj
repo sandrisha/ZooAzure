@@ -259,6 +259,7 @@
     <Content Include="assets\js\moment.min.js" />
     <Content Include="assets\js\sweetalert2.js" />
     <Content Include="Global.asax" />
+    <Content Include="index.html" />
     <Content Include="plantilla\calendar.html" />
     <Content Include="plantilla\charts.html" />
     <Content Include="plantilla\components\buttons.html" />
@@ -291,9 +292,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="BaseDatos\Db.cs" />
+    <Compile Include="Controllers\ClasificacionController.cs" />
+    <Compile Include="Controllers\EspeciesController.cs" />
+    <Compile Include="Controllers\TiposController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Clasificacion.cs" />
+    <Compile Include="Models\Especie.cs" />
+    <Compile Include="Models\RespuestaApi.cs" />
+    <Compile Include="Models\TiposAnimal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -363,6 +372,7 @@
     <Content Include="assets\sass\light-bootstrap-dashboard.scss" />
     <Content Include="plantilla\.DS_Store" />
     <Content Include="plantilla\tables\.DS_Store" />
+    <None Include="Properties\PublishProfiles\ZooAzureAppSPRA - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -372,8 +382,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
