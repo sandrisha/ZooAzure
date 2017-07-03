@@ -43,7 +43,7 @@
                 GetTiposAnimales();
             },
             error: function (respuesta) {
-                //debugger;
+                debugger;
                 console.log(respuesta);
             }
         });

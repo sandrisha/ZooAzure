@@ -323,8 +323,8 @@ namespace ZooAzureApp
                 especie.Clasificacion.id = (int)reader["idClasificacion"];
                 especie.Clasificacion.denominacion = reader["Clasificacion"].ToString();
                 especie.TipoAnimal = new TiposAnimal();
-                especie.TipoAnimal.id = (int)reader["idClasificacion"];
-                especie.TipoAnimal.denominacion = reader["Clasificacion"].ToString();
+                especie.TipoAnimal.id = (long)reader["idTipoAnimal"];
+                especie.TipoAnimal.denominacion = reader["TipoAnimal"].ToString();
                 especie.nPatas = (short)reader["nPatas"];
                 especie.esMascota = (bool)reader["esMascota"];
                 // AÑADO LA ESPECIE A LA LISTA DE RESULTADOS
@@ -358,12 +358,14 @@ namespace ZooAzureApp
                 Especie especie = new Especie();
                 especie.idEspecie = (long)reader["idEspecie"];
                 especie.nombre = reader["NombreEspecie"].ToString();
+
                 especie.Clasificacion = new Clasificacion();
                 especie.Clasificacion.id = (int)reader["idClasificacion"];
                 especie.Clasificacion.denominacion = reader["Clasificacion"].ToString();
+
                 especie.TipoAnimal = new TiposAnimal();
-                especie.TipoAnimal.id = (int)reader["idClasificacion"];
-                especie.TipoAnimal.denominacion = reader["Clasificacion"].ToString();
+                especie.TipoAnimal.id = (long)reader["idTipoAnimal"];
+                especie.TipoAnimal.denominacion = reader["TipoAnimal"].ToString();
                 especie.nPatas = (short)reader["nPatas"];
                 especie.esMascota = (bool)reader["esMascota"];
                 // AÑADO LA ESPECIE A LA LISTA DE RESULTADOS
