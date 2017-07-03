@@ -261,6 +261,8 @@
     <Content Include="assets\js\utilidades.js" />
     <Content Include="Global.asax" />
     <Content Include="index.html" />
+    <Content Include="js\clasificacion.js" />
+    <Content Include="js\tipoAnimalCrear.js" />
     <Content Include="js\tiposAnimal.js" />
     <Content Include="plantilla\calendar.html" />
     <Content Include="plantilla\charts.html" />
@@ -290,6 +292,9 @@
     <Content Include="plantilla\tables\datatables.net.html" />
     <Content Include="plantilla\tables\extended.html" />
     <Content Include="plantilla\tables\regular.html" />
+    <Content Include="clasificaciones.html" />
+    <Content Include="tipoAnimalCrear.html" />
+    <Content Include="tipoAnimalEditar.html" />
     <Content Include="tiposAnimal.html" />
     <Content Include="Web.config" />
   </ItemGroup>

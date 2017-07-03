@@ -129,7 +129,7 @@
                                 <li><a href="regular.html">Regular Tables</a></li>
                                 <li><a href="extended.html">Extended Tables</a></li>
                                 <li><a href="bootstrap-table.html">Bootstrap Table</a></li>
-                                <li class="active"><a href="tiposAnimal.html">Tipo Animal</a></li>
+                                <li class="active"><a href="clasificaciones.html">Clasificaciones</a></li>
                             </ul>
                         </div>
                     </li>
@@ -203,7 +203,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="#">Tipo Animal</a>
+                        <a class="navbar-brand" href="#">Clasificación</a>
                     </div>
                     <div class="collapse navbar-collapse">
 
@@ -431,8 +431,8 @@
 		            searchPlaceholder: "Buscar...",
 		        },
 		        ajax: {
-		            url: '/api/tipos',
-		            dataSrc: 'dataAnimal'
+		            url: '/api/Clasificacion',
+		            dataSrc: 'dataClasificacion'
 		        },
 		        columns: [
                     {
@@ -441,7 +441,7 @@
                         visible: false
                     },
                     {
-                        title: 'Tipo Animal',
+                        title: 'Clasificacion',
                         data: 'denominacion'
                     },
                     {
@@ -473,16 +473,16 @@
 		    });
 
             $('#btnCrear').click(function () {
-                window.location.href = `./tipoAnimalCrear.html`;
+                window.location.href = `./clasficacionCrear.html`;
             });
 
             function verDetalle(id)
 		    {
-                window.location.href = `./tipoAnimalDetalle.html?id=${id}`;
+                window.location.href = `./clasificacionDetalle.html?id=${id}`;
 		    }
 
 		    function editar(id) {
-		        window.location.href = `./tipoAnimalEditar.html?id=${id}`;
+		        window.location.href = `./clasificacionEditar.html?id=${id}`;
 		    }
 
 		    function eliminar(id, fila) {
@@ -490,16 +490,16 @@
 		        if (confirm('Estás seguro de eliminar?')) {
 
 		            $.ajax({
-		                url: `/api/tipos/${id}`,
+		                url: `/api/Clasificacion/${id}`,
 		                type: "DELETE",
 		                success: function (respuesta) {
 		                    var table = $('#datatables').DataTable();
 		                    table.row(fila).remove().draw();
 		                    $(fila).fadeOut('slow');
-		                    mensajes.showSwal('exito', 'Resultado', 'Tipo Animal eliminado correctamente.')
+		                    mensajes.showSwal('exito', 'Resultado', 'Clasificacion eliminada correctamente.')
 		                },
 		                error: function (respuesta) {
-		                    mensajes.showSwal('error', 'Resultado', 'No se pudo eliminar el Tipo Animal.')
+		                    mensajes.showSwal('error', 'Resultado', 'No se pudo eliminar la Clasificación.')
 		                }
 		            });
 		        }
@@ -510,5 +510,5 @@
 
 </script>
 <script src="./assets/js/utilidades.js"></script>
-<script src="./js/tiposAnimal.js"></script>
+<script src="./js/clasificacion.js"></script>
 </html>
