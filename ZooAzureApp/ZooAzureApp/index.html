@@ -301,19 +301,18 @@
 
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="card ">
-                            <div class="header">
-                                <h4 class="title">Especies </h4>
-                                <p class="category">Animales</p>
-                            </div>
+                        <div class="card">
                             <div class="content">
-                                <div class="row">
+                                <div class="toolbar">
+                                    <button type="button" id="btnCrear" class="btn btn-info btn-fill btn-wd">Crear nuevo</button>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+                                <div class="fresh-datatables">
+                                    <table id="datatable" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%"></table>
+                                </div>
+                            </div><!-- end content-->
+                        </div><!--  end card  -->
+                    </div> <!-- end col-md-12 -->
+                </div> <!-- end row -->
 
             </div>
         </div>
@@ -413,7 +412,7 @@
 
 <script type="text/javascript">
     $(document).ready(function() {
-		$('#datatables').DataTable({
+        $('#datatable').DataTable({
 		    "pagingType": "full_numbers",
 		    "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
 		    responsive: true,
@@ -433,23 +432,15 @@
                 },
                 {
                     title: 'Nombre Especie',
-                    data: 'NombreEspecie'
-                },
-                {
-                    title: 'Id Clasicacion',
-                    data: 'idClasicacion'
+                    data: 'nombre'
                 },
                 {
                     title: 'Clasificación',
-                    data: 'Clasificacion'
-                },
-                {
-                    title: 'Id TipoAnimal',
-                    data: 'idTipoAnimal'
+                    data: 'Clasificacion.denominacion'
                 },
                 {
                     title: 'Tipo Animal',
-                    data: 'TipoAnimal'
+                    data: 'TipoAnimal.denominacion'
                 },
                 
                 {
@@ -475,7 +466,7 @@
 
                             return contentHTML;
                         },
-                        "targets": 8 //columna número 8 para las acciones (empezando en 0)
+                        "targets": 6 //columna número 6 para las acciones (empezando en 0)
                     },
 		    ],
 		    rowCallback: (row, data, index) => {
@@ -492,7 +483,7 @@
 		    }
 		});
 
-		var table = $('#datatables').DataTable();
+        var table = $('#datatable').DataTable();
 		function verDetalle(id, fila) {
 		    alert('detalle ' + id);
 		}
@@ -513,14 +504,14 @@
                             type: 'DELETE',
                             dataType: 'json',
                             success: function (response) {
-                                debugger;
-                                var table = $('#datatables').DataTable();
+                                //debugger;
+                                var table = $('#datatable').DataTable();
                                 $(fila).fadeOut('slow');
                                 table.row(fila).remove().draw();
                                 mensajes.showSwal('exito', 'Resultado', 'Especie eliminada correctamente.');
                             },
                             error: function (response) {
-                                debugger;
+                                //debugger;
                                 mensajes.showSwal('error', 'Resultado', 'No se pudo eliminar la Especie.');
                                 console.log('error al eliminar especie: ' + id + ' -> respuesta: ', response);
                             }
@@ -531,6 +522,5 @@
 	});
 </script>
 <script src="/assets/js/utilidades.js"></script>
-<script src="./js/especie.js"></script>
 
 </html>

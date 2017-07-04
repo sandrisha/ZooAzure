@@ -263,7 +263,6 @@
     <Content Include="index.html" />
     <Content Include="Global.asax" />
     <Content Include="js\clasificacion.js" />
-    <Content Include="js\especie.js" />
     <Content Include="js\tipoAnimalCrear.js" />
     <Content Include="js\tipoAnimalEditar.js" />
     <Content Include="js\tiposAnimal.js" />
