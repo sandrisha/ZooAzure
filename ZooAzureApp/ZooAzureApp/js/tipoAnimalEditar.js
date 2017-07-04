@@ -12,7 +12,7 @@ $(document).ready(function () {
             if (estado === 'success') {
                 // SI LLEGO HASTA AQUÍ QUIERE DECIR
                 // QUE EN 'RESPUESTA' TENGO LA INFO
-                $('#denominacion').val(respuesta.dataMarcas[0].denominacion);
+                $('#denominacion').val(respuesta.dataAnimal[0].denominacion);
             }
         });
     }
