@@ -483,42 +483,75 @@
 		    }
 		});
 
-        var table = $('#datatable').DataTable();
-		function verDetalle(id, fila) {
-		    alert('detalle ' + id);
-		}
+        //var table = $('#datatable').DataTable();
+		//function verDetalle(id, fila) {
+		//    alert('detalle ' + id);
+        //}
 
-		function editar(id, fila) {
-		    alert('editar ' + id);
-		}
 
-		function eliminar(id, fila) {
-		    //var respuesta = confirm('¿Desea eliminar la especie?');
-		    mensajes.showSwal('confirmacion',
-                '¿Desea Eliminar la Especie?',
-                'No podrá recuperar la Especie.',
-                (estado) => {
-                    if (estado) {
-                        $.ajax({
-                            url: `/api/especie/${id}`,
-                            type: 'DELETE',
-                            dataType: 'json',
-                            success: function (response) {
-                                //debugger;
-                                var table = $('#datatable').DataTable();
-                                $(fila).fadeOut('slow');
-                                table.row(fila).remove().draw();
-                                mensajes.showSwal('exito', 'Resultado', 'Especie eliminada correctamente.');
-                            },
-                            error: function (response) {
-                                //debugger;
-                                mensajes.showSwal('error', 'Resultado', 'No se pudo eliminar la Especie.');
-                                console.log('error al eliminar especie: ' + id + ' -> respuesta: ', response);
-                            }
-                        });
+		//function editar(id, fila) {
+		//    alert('editar ' + id);
+        //}
+
+        $('#btnCrear').click(function () {
+            window.location.href = `./tipoAnimalCrear.html`;
+        });
+
+        function verDetalle(id) {
+            window.location.href = `./tipoAnimalDetalle.html?id=${id}`;
+        }
+
+        function editar(id) {
+            window.location.href = `./tipoAnimalEditar.html?id=${id}`;
+        }
+        function eliminar(id, fila) {
+
+            if (confirm('Estás seguro de eliminar?')) {
+
+                $.ajax({
+                    url: `/api/especie/${id}`,
+                    type: "DELETE",
+                    success: function (respuesta) {
+                        var table = $('#datatables').DataTable();
+                        table.row(fila).remove().draw();
+                        $(fila).fadeOut('slow');
+                        mensajes.showSwal('exito', 'Resultado', 'Especie eliminada correctamente.')
+                    },
+                    error: function (respuesta) {
+                        mensajes.showSwal('error', 'Resultado', 'No se pudo eliminar Especie.')
                     }
                 });
-    		}
+            }
+        }
+
+        
+		//function eliminar(id, fila) {
+		//    //var respuesta = confirm('¿Desea eliminar la especie?');
+		//    mensajes.showSwal('confirmacion',
+        //        '¿Desea Eliminar la Especie?',
+        //        'No podrá recuperar la Especie.',
+        //        (estado) => {
+        //            if (estado) {
+        //                $.ajax({
+        //                    url: `/api/especie/${id}`,
+        //                    type: 'DELETE',
+        //                    dataType: 'json',
+        //                    success: function (response) {
+        //                        //debugger;
+        //                        var table = $('#datatable').DataTable();
+        //                        $(fila).fadeOut('slow');
+        //                        table.row(fila).remove().draw();
+        //                        mensajes.showSwal('exito', 'Resultado', 'Especie eliminada correctamente.');
+        //                    },
+        //                    error: function (response) {
+        //                        //debugger;
+        //                        mensajes.showSwal('error', 'Resultado', 'No se pudo eliminar la Especie.');
+        //                        console.log('error al eliminar especie: ' + id + ' -> respuesta: ', response);
+        //                    }
+        //                });
+        //            }
+        //        });
+    	//	}
 	});
 </script>
 <script src="/assets/js/utilidades.js"></script>

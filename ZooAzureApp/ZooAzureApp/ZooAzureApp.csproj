@@ -259,7 +259,6 @@
     <Content Include="assets\js\moment.min.js" />
     <Content Include="assets\js\sweetalert2.js" />
     <Content Include="assets\js\utilidades.js" />
-    <Content Include="especies.html" />
     <Content Include="index.html" />
     <Content Include="Global.asax" />
     <Content Include="js\clasificacion.js" />
